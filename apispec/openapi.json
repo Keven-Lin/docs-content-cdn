@@ -4,6 +4,11 @@
     "title": "CDN360 API Specification",
     "version": "1.0",
     "description": "CDN360 APIs allow you to manage CDN360 services.",
+    "x-logo": {
+      "url": "images/cdn6.jpg",
+      "backgroundColor": "#FFFFFF",
+      "altText": "CDNetworks logo"
+    },
     "contact": {
       "url": "https://www.cdnetworks.com"
     }
@@ -12266,18 +12271,18 @@
                 "properties": {
                   "time": {
                     "type": "string",
-                    "description": "RFC 3339 date indicating the time."
+                    "description": "RFC 3339 date indicating when the annotation applies."
                   },
                   "hostnames": {
                     "type": "array",
-                    "description": "List of hostnames from which to return data. Wildcard hostnames such as *.domain.com are also permitted. If unspecified, data from all hostnames are returned.",
+                    "description": "List of applicable hostnames. Wildcard hostnames such as *.domain.com are also permitted. If unspecified, the annotation applies to all hostnames.",
                     "items": {
                       "type": "string"
                     }
                   },
                   "serverGroups": {
                     "type": "array",
-                    "description": "Indicates one or more server groups (standard, premium, premium+, or ultra).",
+                    "description": "One or more server groups (standard, premium, premium+, or ultra).",
                     "items": {
                       "type": "string"
                     }
@@ -12296,7 +12301,7 @@
                       "configuration",
                       "operation"
                     ],
-                    "description": "Summarizes the type of event that occurred:\n<table><tr><th>Value</th><th>Description</th></tr><tr><td>client</td><td>An event affecting clients, such as the release of a popular game.</td></tr><tr><td>configuration</td><td>A property configuration change.</td></tr><tr><td>operation</td><td>An operation performed on the CDN platform, for example, updated cache servers.</td></tr></table>"
+                    "description": "Summarizes the type of event that occurred:\n<table><tr><th>Value</th><th>Description</th></tr><tr><td>client</td><td>An event affecting clients, such as the release of a popular game.</td></tr><tr><td>configuration</td><td>A property configuration change.</td></tr><tr><td>operation</td><td>An operation performed on the CDN platform, for example, updated cache servers. This type can only be created by CDNetworks.</td></tr></table>"
                   },
                   "comments": {
                     "type": "string",
@@ -12816,30 +12821,30 @@
                         "properties": {
                           "id": {
                             "type": "string",
-                            "description": "An ID representation the annotation.",
+                            "description": "An ID representing the annotation.",
                             "minLength": 1
                           },
                           "time": {
                             "type": "string",
-                            "description": "RFC 3339 date."
+                            "description": "RFC 3339 date indicating when the annotation applies."
                           },
                           "hostnames": {
                             "type": "array",
-                            "description": "Indicates the hostnames that are affected.",
+                            "description": "The applicable hostnames.",
                             "items": {
                               "type": "string"
                             }
                           },
                           "clientRegions": {
                             "type": "array",
-                            "description": "One or more client regions. Refer to the information about client regions in the <i>Create an edge hostname</i> API.",
+                            "description": "One or more client regions. Refer to the information about client regions in the <a href=\"#operation/createEdgeHostname\">Create an edge hostname API</a>.",
                             "items": {
                               "type": "string"
                             }
                           },
                           "type": {
                             "type": "string",
-                            "description": "Descriptions the type of annotation.",
+                            "description": "Describes the type of annotation. Operation annotations can only be created by CDNetworks.",
                             "enum": [
                               "client",
                               "operation",
@@ -12848,7 +12853,7 @@
                           },
                           "comments": {
                             "type": "string",
-                            "description": "Text that appears in the report shown on the CDN360 portal."
+                            "description": "Text shown in the report on the CDN360 portal."
                           }
                         },
                         "required": [
@@ -12958,7 +12963,7 @@
             },
             "in": "query",
             "name": "type",
-            "description": "Indicates the type of annotation (client, configuration, or operation)."
+            "description": "Indicates the type of annotation (client, configuration, or operation). Operation annotations can only be created by CDNetworks."
           },
           {
             "schema": {
@@ -12966,7 +12971,7 @@
             },
             "in": "query",
             "name": "search",
-            "description": "Search for annotations whose ID or comment match this value."
+            "description": "Search for annotations whose ID or comment match this value. When searching by ID, only an exact match will return results. The match on comments is case insensitive, and partial matches are supported."
           },
           {
             "schema": {
@@ -12984,7 +12989,7 @@
             },
             "in": "query",
             "name": "limit",
-            "description": "Maximum number of tasks to return."
+            "description": "Maximum number of annotations to return."
           },
           {
             "schema": {
@@ -12992,7 +12997,7 @@
             },
             "in": "header",
             "name": "Report-Range",
-            "description": "An optional header that resellers can use to specify whether to include data from children customers. <table><tr><th>Value</th><th>Behavior</th></tr><tr><td>self-only</td><td>Include hostnames from the caller.</td></tr><tr><td>children-only</td><td>Only hostnames owned by children customers will be included.</td></tr><tr><td>self+children</td><td>Include data from hostnames of both the caller and children customers.</td></tr></table>"
+            "description": "An optional header that resellers can use to specify whether to include annotations from children customers. <table><tr><th>Value</th><th>Behavior</th></tr><tr><td>self-only</td><td>Include annotations from the caller.</td></tr><tr><td>children-only</td><td>Only annotations owned by children customers will be included.</td></tr><tr><td>self+children</td><td>Include annotations of both the caller and children customers.</td></tr></table>"
           },
           {
             "schema": {
@@ -13003,7 +13008,7 @@
             "description": "If you are a reseller, you can use this header to specify the ID of a child customer."
           }
         ],
-        "description": "Obtain a list of annotations you have created. Annotations appear in the CDN360 portal's reports based on the conditions defined for each annotation.",
+        "description": "Obtain a list of annotations you have created. Annotations appear in the CDN360 portal's reports based on the conditions defined for each annotation. Filter results using the query parameters and request body.",
         "requestBody": {
           "content": {
             "application/json": {
@@ -13066,7 +13071,7 @@
           "name": "id",
           "in": "path",
           "required": true,
-          "description": "Annotation ID."
+          "description": "ID of annotation to delete."
         }
       ],
       "delete": {
@@ -13079,7 +13084,7 @@
             "description": "The annotation was successfully deleted."
           },
           "403": {
-            "description": "Forbidden",
+            "description": "You do not have permission to delete the annotation.",
             "content": {
               "application/json": {
                 "schema": {
@@ -13105,7 +13110,7 @@
             }
           },
           "404": {
-            "description": "Not Found",
+            "description": "The annotation could not be found.",
             "content": {
               "application/json": {
                 "schema": {
@@ -13176,30 +13181,30 @@
                   "properties": {
                     "id": {
                       "type": "string",
-                      "description": "An ID representation the annotation.",
+                      "description": "An ID representing the annotation.",
                       "minLength": 1
                     },
                     "time": {
                       "type": "string",
-                      "description": "RFC 3339 date."
+                      "description": "RFC 3339 date indicating when the annotation applies."
                     },
                     "hostnames": {
                       "type": "array",
-                      "description": "Indicates the hostnames that are affected.",
+                      "description": "The applicable hostnames.",
                       "items": {
                         "type": "string"
                       }
                     },
                     "clientRegions": {
                       "type": "array",
-                      "description": "One or more client regions. Refer to the information about client regions in the <i>Create an edge hostname</i> API.",
+                      "description": "One or more client regions. Refer to the information about client regions in the <a href=\"#operation/createEdgeHostname\">Create an edge hostname API</a>.",
                       "items": {
                         "type": "string"
                       }
                     },
                     "type": {
                       "type": "string",
-                      "description": "Descriptions the type of annotation.",
+                      "description": "Describes the type of annotation. Operation annotations can only be created by CDNetworks.",
                       "enum": [
                         "client",
                         "operation",
@@ -13208,7 +13213,7 @@
                     },
                     "comments": {
                       "type": "string",
-                      "description": "Text that appears in the report shown on the CDN360 portal."
+                      "description": "Text shown in the report on the CDN360 portal."
                     }
                   },
                   "required": [
@@ -13293,7 +13298,7 @@
           }
         },
         "operationId": "getAnnotation",
-        "description": "Retrieve details about a report annotation.",
+        "description": "Retrieve details about a report annotation including the conditions in which it will appear in a CDN360 report.",
         "parameters": [
           {
             "schema": {
@@ -13379,7 +13384,7 @@
             }
           }
         },
-        "description": "Update a report annotation.",
+        "description": "Update a report annotation. It will appear within CDN360 portal reports when its conditions are met.",
         "operationId": "updateAnnotation",
         "requestBody": {
           "content": {
@@ -13389,11 +13394,11 @@
                 "properties": {
                   "time": {
                     "type": "string",
-                    "description": "RFC 3339 date."
+                    "description": "RFC 3339 date indicating when the annotation applies."
                   },
                   "type": {
                     "type": "string",
-                    "description": "Summarizes the type of event that occurred:\n<table><tr><th>Value</th><th>Description</th></tr><tr><td>client</td><td>An event affecting clients, such as the release of a popular game.</td></tr><tr><td>configuration</td><td>A property configuration change.</td></tr><tr><td>operation</td><td>An operation performed on the CDN platform, for example, updated cache servers.</td></tr></table>",
+                    "description": "Summarizes the type of event that occurred:\n<table><tr><th>Value</th><th>Description</th></tr><tr><td>client</td><td>An event affecting clients, such as the release of a popular game.</td></tr><tr><td>configuration</td><td>A property configuration change.</td></tr><tr><td>operation</td><td>An operation performed on the CDN platform, for example, updated cache servers. This type can only be created by CDNetworks.</td></tr></table>",
                     "enum": [
                       "client",
                       "configuration",
@@ -13402,7 +13407,7 @@
                   },
                   "hostnames": {
                     "type": "array",
-                    "description": "List of hostnames for which to return data. Wildcard hostnames such as *.domain.com are also permitted. If unspecified, data from all hostnames will be returned.",
+                    "description": "List of applicable hostnames. Wildcard hostnames such as *.domain.com are also permitted. If unspecified, the annotation applies to data for all hostnames.",
                     "items": {
                       "type": "string"
                     }
@@ -24918,6 +24923,32 @@
                 }
               }
             }
+          },
+          "402": {
+            "description": "The request was invalid. Refer to the response body for details.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "string"
+                    },
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "examples": {
+                  "Too many webhooks": {
+                    "value": {
+                      "code": "TooManyWebhooks",
+                      "message": "The number of webhooks exceeded the account maximum."
+                    }
+                  }
+                }
+              }
+            }
           }
         },
         "operationId": "post-cdn-webhooks",
@@ -25481,7 +25512,8 @@
                   },
                   "description": {
                     "type": "string",
-                    "description": "A description of the secret. This may be useful for recording the purpose of the secret."
+                    "description": "A description of the secret. This may be useful for recording the purpose of the secret.",
+                    "maxLength": 250
                   },
                   "secret": {
                     "type": "string",
@@ -25556,7 +25588,8 @@
                           },
                           "description": {
                             "type": "string",
-                            "description": "A description of the secret."
+                            "description": "A description of the secret.",
+                            "maxLength": 250
                           },
                           "creationTime": {
                             "type": "string",
@@ -25759,7 +25792,8 @@
                     },
                     "description": {
                       "type": "string",
-                      "description": "Description of the secret."
+                      "description": "Description of the secret.",
+                      "maxLength": 250
                     },
                     "secret": {
                       "type": "string",
@@ -26060,7 +26094,8 @@
                   },
                   "description": {
                     "type": "string",
-                    "description": "A description of the secret. This may be useful for recording the purpose of the secret."
+                    "description": "A description of the secret. This may be useful for recording the purpose of the secret.",
+                    "maxLength": 250
                   },
                   "secret": {
                     "type": "string",
