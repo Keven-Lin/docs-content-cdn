@@ -4,11 +4,6 @@
     "title": "CDN360 API Specification",
     "version": "1.0",
     "description": "CDN360 APIs allow you to manage CDN360 services.",
-    "x-logo": {
-      "url": "images/cdn6.jpg",
-      "backgroundColor": "#FFFFFF",
-      "altText": "CDNetworks logo"
-    },
     "contact": {
       "url": "https://www.cdnetworks.com"
     }
