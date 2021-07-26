@@ -1,4 +1,4 @@
-# Welcome to CDN360 Test
+# Welcome to CDN360
 
 CDN360 is leading the next evolution of content delivery networks (CDN). 
 

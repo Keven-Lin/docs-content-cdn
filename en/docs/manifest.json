@@ -9,31 +9,31 @@
           "title": "Quick Start",
           "caption": "Getting started with CDN360",
           "icon": "bolt",
-          "path": "en/docs/intro"
+          "path": "docs/intro"
         },
         {
           "title": "Portal Reference",
           "caption": "CDN360 Portal reference",
           "icon": "book",
-          "path": "en/docs/portal/accessing-portal/logging-in"
+          "path": "docs/portal/accessing-portal/logging-in"
         },
         {
           "title": "API Reference",
           "caption": "CDN360 API reference",
           "icon": "gear",
-          "path": "en/apidocs"
+          "path": "apidocs"
         },
         {
           "title": "Edge Logic Reference",
           "caption": "Learn CDN360 Edge Logic",
           "icon": "cli",
-          "path": "en/docs/edge-logic/intro"
+          "path": "docs/edge-logic/intro"
         }
       ]
     },
     "routes": [
-      { "title": "Introduction", "path": "/en/docs/intro.md" },
-      { "title": "Getting Started", "path": "/en/docs/getting-started.md" },
+      { "title": "Introduction", "path": "/docs/intro.md" },
+      { "title": "Getting Started", "path": "/docs/getting-started.md" },
       {
         "title": "Portal",
         "heading": true,
@@ -43,15 +43,15 @@
             "routes": [
               {
                 "title": "Logging-In",
-                "path": "/en/docs/portal/accessing-portal/logging-in.md"
+                "path": "/docs/portal/accessing-portal/logging-in.md"
               },
               {
                 "title": "Forgot Password",
-                "path": "/en/docs/portal/accessing-portal/forgot-password.md"
+                "path": "/docs/portal/accessing-portal/forgot-password.md"
               },
               {
                 "title": "Navigating UI",
-                "path": "/en/docs/portal/accessing-portal/navigating-ui.md"
+                "path": "/docs/portal/accessing-portal/navigating-ui.md"
               }
             ]
           },
@@ -60,35 +60,35 @@
             "routes": [
               {
                 "title": "Overview",
-                "path": "/en/docs/portal/edge-configurations/managing-properties.md"
+                "path": "/docs/portal/edge-configurations/managing-properties.md"
               },
               {
                 "title": "Create a Property",
-                "path": "/en/docs/portal/edge-configurations/creating-property.md"
+                "path": "/docs/portal/edge-configurations/creating-property.md"
               },
               {
                 "title": "Edit a Property",
-                "path": "/en/docs/portal/edge-configurations/editing-properties.md"
+                "path": "/docs/portal/edge-configurations/editing-properties.md"
               },
               {
                 "title": "Deploy/Undeploy a Property",
-                "path": "/en/docs/portal/edge-configurations/deploying-property.md"
+                "path": "/docs/portal/edge-configurations/deploying-property.md"
               },
               {
                 "title": "Test a Property",
-                "path": "/en/docs/portal/edge-configurations/testing-property.md"
+                "path": "/docs/portal/edge-configurations/testing-property.md"
               },
               {
                 "title": "Delete a Property",
-                "path": "/en/docs/portal/edge-configurations/deleting-property.md"
+                "path": "/docs/portal/edge-configurations/deleting-property.md"
               },
               {
                 "title": "Compare Property Versions",
-                "path": "/en/docs/portal/edge-configurations/comparing-properties.md"
+                "path": "/docs/portal/edge-configurations/comparing-properties.md"
               },
               {
                 "title": "Manage Origins",
-                "path": "/en/docs/portal/edge-configurations/managing-origins.md"
+                "path": "/docs/portal/edge-configurations/managing-origins.md"
               }
             ]
           },
@@ -97,19 +97,19 @@
             "routes": [
               {
                 "title": "Overview",
-                "path": "/en/docs/portal/secrets/overview.md"
+                "path": "/docs/portal/secrets/overview.md"
               },
               {
                 "title": "Create a Secret",
-                "path": "/en/docs/portal/secrets/creating-secrets.md"
+                "path": "/docs/portal/secrets/creating-secrets.md"
               },
               {
                 "title": "Edit a Secret",
-                "path": "/en/docs/portal/secrets/editing-secrets.md"
+                "path": "/docs/portal/secrets/editing-secrets.md"
               },
               {
                 "title": "Delete a Secret",
-                "path": "/en/docs/portal/secrets/deleting-secrets.md"
+                "path": "/docs/portal/secrets/deleting-secrets.md"
               }
             ]
           },
@@ -118,19 +118,19 @@
             "routes": [
               {
                 "title": "Overview",
-                "path": "/en/docs/portal/traffic-management/overview.md"
+                "path": "/docs/portal/traffic-management/overview.md"
               },
               {
                 "title": "Create an Edge Hostname",
-                "path": "/en/docs/portal/traffic-management/creating-edge-hostname.md"
+                "path": "/docs/portal/traffic-management/creating-edge-hostname.md"
               },
               {
                 "title": "Edit an Edge Hostname",
-                "path": "/en/docs/portal/traffic-management/editing-edge-hostname.md"
+                "path": "/docs/portal/traffic-management/editing-edge-hostname.md"
               },
               {
                 "title": "Delete an Edge Hostname",
-                "path": "/en/docs/portal/traffic-management/deleting-edge-hostname.md"
+                "path": "/docs/portal/traffic-management/deleting-edge-hostname.md"
               }
             ]
           },
@@ -139,41 +139,41 @@
             "routes": [
               {
                 "title": "Overview",
-                "path": "/en/docs/portal/certificates/overview.md"
+                "path": "/docs/portal/certificates/overview.md"
               },
               {
                 "title": "Create a Certificate",
-                "path": "/en/docs/portal/certificates/creating-certificates.md"
+                "path": "/docs/portal/certificates/creating-certificates.md"
               },
               {
                 "title": "Update a Certificate",
-                "path": "/en/docs/portal/certificates/updating-certificates.md"
+                "path": "/docs/portal/certificates/updating-certificates.md"
               },
               {
                 "title": "Deploy a Certificate",
-                "path": "/en/docs/portal/certificates/deploying-certificates.md"
+                "path": "/docs/portal/certificates/deploying-certificates.md"
               },
               {
                 "title": "Auto-Renew a Certificate",
-                "path": "/en/docs/portal/certificates/auto-renewal.md"
+                "path": "/docs/portal/certificates/auto-renewal.md"
               },
               {
                   "title": "Delete a Certificate",
-                "path": "/en/docs/portal/certificates/deleting-certificate.md"
+                "path": "/docs/portal/certificates/deleting-certificate.md"
               }
             ]
           },
-          { "title": "Reports", "path": "/en/docs/portal/reports.md" },
-          { "title": "Content Management", "path": "/en/docs/portal/content-management.md" },
+          { "title": "Reports", "path": "/docs/portal/reports.md" },
+          { "title": "Content Management", "path": "/docs/portal/content-management.md" },
           { "title": "Tasks",
             "routes": [
               {
                 "title": "Validations",
-                "path": "/en/docs/portal/tasks/validations.md"
+                "path": "/docs/portal/tasks/validations.md"
               },
               {
                 "title": "Deployments",
-                "path": "/en/docs/portal/tasks/deployments.md"
+                "path": "/docs/portal/tasks/deployments.md"
               }
             ]
           },
@@ -182,15 +182,15 @@
             "routes": [
               {
                 "title": "Overview",
-                "path": "/en/docs/portal/identities-and-access/overview.md"
+                "path": "/docs/portal/identities-and-access/overview.md"
               },
               {
                 "title": "Managing Roles",
-                "path": "/en/docs/portal/identities-and-access/managing-roles.md"
+                "path": "/docs/portal/identities-and-access/managing-roles.md"
               },
               {
                 "title": "Managing Users",
-                "path": "/en/docs/portal/identities-and-access/managing-users.md"
+                "path": "/docs/portal/identities-and-access/managing-users.md"
               }
             ]
           }
@@ -202,35 +202,35 @@
         "routes": [
           {
             "title": "Introduction",
-            "path": "/en/docs/edge-logic/intro.md"
+            "path": "/docs/edge-logic/intro.md"
           },
           {
             "title": "Hello World",
-            "path": "/en/docs/edge-logic/hello-world.md"
+            "path": "/docs/edge-logic/hello-world.md"
           },
           {
             "title": "Simple Caching",
-            "path": "/en/docs/edge-logic/simple-caching.md"
+            "path": "/docs/edge-logic/simple-caching.md"
           },
           {
             "title": "Multiple Origins with 'if'",
-            "path": "/en/docs/edge-logic/multiple-origins.md"
+            "path": "/docs/edge-logic/multiple-origins.md"
           },
           {
             "title": "Staging Environment",
-            "path": "/en/docs/edge-logic/staging-environment.md"
+            "path": "/docs/edge-logic/staging-environment.md"
           },
           {
             "title": "Supported Directives",
-            "path": "/en/docs/edge-logic/supported-directives.md"
+            "path": "/docs/edge-logic/supported-directives.md"
           },
           {
             "title": "Built-in Variables",
-            "path": "/en/docs/edge-logic/built-in-variables.md"
+            "path": "/docs/edge-logic/built-in-variables.md"
           },
           {
             "title": "FAQ",
-            "path": "/en/docs/edge-logic/faq.md"
+            "path": "/docs/edge-logic/faq.md"
           }
         ]
       },
@@ -240,15 +240,15 @@
         "routes": [
           {
             "title": "AWS Bucket Acceleration",
-            "path": "/en/docs/recipes/aws-bucket.md"
+            "path": "/docs/recipes/aws-bucket.md"
           },
           {
             "title": "REST API Acceleration",
-            "path": "/en/docs/recipes/api-acceleration.md"
+            "path": "/docs/recipes/api-acceleration.md"
           },
           {
             "title": "Secure Content Delivery",
-            "path": "/en/docs/recipes/secure-delivery.md"
+            "path": "/docs/recipes/secure-delivery.md"
           }
         ]
       }

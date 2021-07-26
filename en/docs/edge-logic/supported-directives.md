@@ -77,13 +77,13 @@ Adds the specified field to the end of a response provided that the response cod
 
 ### [`allow`](http://nginx.org/en/docs/http/ngx_http_access_module.html#allow)
 
-<span class="badge">standard</span>
+<span class="badge">standard</span> <span class="badge green">CDN360 Enhanced</span>
 
 **Syntax:** `allow address | CIDR | all;`<br/>
 **Default:** `-` <br/>
 **Context:** server, location
 
-Allows access from the specified network or address. Usually used together with [`deny`](#deny). (Work in progress to enable it in the Edge Logic <span class="badge yellow">ETA: May. 2021</span>)
+Allows access from the specified network or address. Usually used together with [`deny`](#deny). Enhanced the [open-source version](http://nginx.org/en/docs/http/ngx_http_access_module.html#allow) to make it work with the hierarchical cache structure.
 
 
 ### [`auth_request`](http://nginx.org/en/docs/http/ngx_http_auth_request_module.html#auth_request)
@@ -161,13 +161,13 @@ This directive allows you to add up to 2 customized fields into the access log. 
 
 ### [`deny`](http://nginx.org/en/docs/http/ngx_http_access_module.html#deny)
 
-<span class="badge">standard</span>
+<span class="badge">standard</span> <span class="badge green">CDN360 Enhanced</span>
 
 **Syntax:** `deny address | CIDR | all;`<br/>
 **Default:** `—`<br/>
 **Context:** server, location
 
-Denies access from the specified network or address. Usually used together with [`allow`](#allow). (Work in progress to enable it in the Edge Logic <span class="badge yellow">ETA: May. 2021</span>)
+Denies access from the specified network or address. Usually used together with [`allow`](#allow). Enhanced the [open-source version](http://nginx.org/en/docs/http/ngx_http_access_module.html#deny) to make it work with the hierarchical cache structure.
 
 ### `enable_websocket`
 
@@ -810,6 +810,9 @@ proxy_cache_valid $cache_time;
 # extract a part from the origin's response header and send to client
 proxy_set $version_number $1 if($upstream_http_version ~ "Version:(.*)$");
 add_header version-number $version_number;
+# do not cache status codes 301 and 302 from the origin
+proxt_set $no_store 1 if ($upstream_response_status ~ 30[12]);
+proxy_no_cache $no_store;
 ```
 The directive is merged across different levels (http/server/location/location if). If the same variable is assigned in different levels, the assignment in the innermost level takes effect.
 
