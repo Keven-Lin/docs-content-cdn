@@ -1799,7 +1799,6 @@
                                   },
                                   "by": {
                                     "type": "array",
-                                    "default": "standard",
                                     "description": "This field is used if the action is of type \"deliver\". Specify one or more of the server groups (<i>standard</i>, <i>premium</i>, <i>premium+</i>, and <i>ultra</i>) to control what servers can be used to deliver content. If unspecified, \"standard\" is used.",
                                     "enum": [
                                       "standard",
@@ -2156,7 +2155,6 @@
                             },
                             "by": {
                               "type": "array",
-                              "default": "standard",
                               "description": "This field is used if the action is of type \"deliver\". Specify one or more of the server groups (<i>standard</i>, <i>premium</i>, <i>premium+</i>, and <i>ultra</i>) to control what servers can be used to deliver content. If unspecified, \"standard\" is used.",
                               "enum": [
                                 "standard",
@@ -2407,7 +2405,6 @@
                             },
                             "by": {
                               "type": "array",
-                              "default": "standard",
                               "description": "This field is used if the action is of type \"deliver\". Specify one or more of the server groups (<i>standard</i>, <i>premium</i>, <i>premium+</i>, and <i>ultra</i>) to control what servers can be used to deliver content. If unspecified, \"standard\" is used.",
                               "enum": [
                                 "standard",
@@ -4077,11 +4074,7 @@
                   "properties": {
                     "code": {
                       "type": "string",
-                      "description": "An error code",
-                      "enum": [
-                        "InvalidListOffset",
-                        "InvalidListLimit"
-                      ]
+                      "description": "An error code"
                     },
                     "message": {
                       "type": "string",
@@ -4183,7 +4176,6 @@
             "schema": {
               "type": "string",
               "default": "lastUpdateTime",
-              "maxLength": 0,
               "enum": [
                 "creationTime",
                 "lastUpdateTime"
@@ -4448,7 +4440,6 @@
                             },
                             "by": {
                               "type": "array",
-                              "default": "standard",
                               "description": "This field is used if the action is of type \"deliver\". Specify one or more of the server groups (<i>standard</i>, <i>premium</i>, <i>premium+</i>, and <i>ultra</i>) to control what servers can be used to deliver content. If unspecified, \"standard\" is used.",
                               "enum": [
                                 "standard",
@@ -5430,9 +5421,9 @@
                             "type": "string",
                             "enum": [
                               "uploaded",
-                              "self-signed"
+                              "selfsigned"
                             ],
-                            "description": "Indicates the type of the certificate, either \"uploaded\" or \"self-signed\"."
+                            "description": "Indicates the type of certificate, either \"uploaded\" or \"self-signed\"."
                           },
                           "expirationTime": {
                             "type": "string",
@@ -12608,7 +12599,7 @@
                           "submissionTime": "2019-05-22T08:30:54Z",
                           "finishTime": "2019-05-22T08:35:56Z",
                           "target": "production",
-                          "status": "succeeded",
+                          "status": "finished",
                           "action": "delete",
                           "apiRequestId": "a104b7ad6ab2e91f",
                           "fileEntries": 1,
@@ -12623,7 +12614,7 @@
                           "submissionTime": "2019-05-22T08:30:39Z",
                           "finishTime": "2019-05-22T08:36:42Z",
                           "target": "staging",
-                          "status": "succeeded",
+                          "status": "finished",
                           "action": "delete",
                           "apiRequestId": "049ee33603dc1aab",
                           "fileEntries": 1,
@@ -12638,7 +12629,7 @@
                           "submissionTime": "2019-05-22T08:29:34Z",
                           "finishTime": "2019-05-22T08:32:28Z",
                           "target": "staging",
-                          "status": "succeeded",
+                          "status": "finished",
                           "action": "invalidate",
                           "apiRequestId": "646163723701dbfc",
                           "fileEntries": 1,
@@ -13604,7 +13595,7 @@
                     "value": {
                       "submissionTime": "2019-11-21T12:00:42Z",
                       "finishTime": "2019-11-21T12:03:47Z",
-                      "status": "succeeded",
+                      "status": "finished",
                       "fileUrls": [
                         "http://download.info/sun.jpg"
                       ],
@@ -17191,7 +17182,7 @@
                           "description": "Products enabled for the customer. \"CDN\" representing CDN360 and \"ECP\" representing Edge Computing Platform are supported. ",
                           "enum": [
                             "CDN",
-                            "ECP'"
+                            "ECP"
                           ],
                           "items": {
                             "type": "string"
@@ -17229,6 +17220,21 @@
                       },
                       "required": [
                         "regionalOffice"
+                      ],
+                      "examples": [
+                        {
+                          "apiRate": 64,
+                          "apiAccountLimit": 3,
+                          "type": "regular",
+                          "products": [
+                            "CDN"
+                          ],
+                          "status": "suspended",
+                          "description": "string",
+                          "regionalOffice": "string",
+                          "parentId": "string",
+                          "contactLimit": 20
+                        }
                       ]
                     },
                     "portalSettings": {
@@ -17327,7 +17333,8 @@
                     "apiName",
                     "name",
                     "apiKey"
-                  ]
+                  ],
+                  "examples": []
                 },
                 "examples": {
                   "example-1": {
@@ -17511,7 +17518,7 @@
                           "description": "Products enabled for the customer. \"CDN\" representing CDN360 and \"ECP\" representing Edge Computing Platform are supported. ",
                           "enum": [
                             "CDN",
-                            "ECP'"
+                            "ECP"
                           ],
                           "items": {
                             "type": "string"
@@ -17549,6 +17556,21 @@
                       },
                       "required": [
                         "regionalOffice"
+                      ],
+                      "examples": [
+                        {
+                          "apiRate": 64,
+                          "apiAccountLimit": 3,
+                          "type": "regular",
+                          "products": [
+                            "CDN"
+                          ],
+                          "status": "suspended",
+                          "description": "string",
+                          "regionalOffice": "string",
+                          "parentId": "string",
+                          "contactLimit": 20
+                        }
                       ]
                     },
                     "portalSettings": {
@@ -17647,7 +17669,8 @@
                     "apiName",
                     "name",
                     "apiKey"
-                  ]
+                  ],
+                  "examples": []
                 },
                 "examples": {
                   "example-1": {
@@ -17933,7 +17956,7 @@
                         "description": "Products enabled for the customer. \"CDN\" representing CDN360 and \"ECP\" representing Edge Computing Platform are supported. ",
                         "enum": [
                           "CDN",
-                          "ECP'"
+                          "ECP"
                         ],
                         "items": {
                           "type": "string"
@@ -17971,6 +17994,21 @@
                     },
                     "required": [
                       "regionalOffice"
+                    ],
+                    "examples": [
+                      {
+                        "apiRate": 64,
+                        "apiAccountLimit": 3,
+                        "type": "regular",
+                        "products": [
+                          "CDN"
+                        ],
+                        "status": "suspended",
+                        "description": "string",
+                        "regionalOffice": "string",
+                        "parentId": "string",
+                        "contactLimit": 20
+                      }
                     ]
                   },
                   "ipWhiteList": {
@@ -18212,7 +18250,7 @@
                           "description": "Products enabled for the customer. \"CDN\" representing CDN360 and \"ECP\" representing Edge Computing Platform are supported. ",
                           "enum": [
                             "CDN",
-                            "ECP'"
+                            "ECP"
                           ],
                           "items": {
                             "type": "string"
@@ -18250,6 +18288,21 @@
                       },
                       "required": [
                         "regionalOffice"
+                      ],
+                      "examples": [
+                        {
+                          "apiRate": 64,
+                          "apiAccountLimit": 3,
+                          "type": "regular",
+                          "products": [
+                            "CDN"
+                          ],
+                          "status": "suspended",
+                          "description": "string",
+                          "regionalOffice": "string",
+                          "parentId": "string",
+                          "contactLimit": 20
+                        }
                       ]
                     },
                     "portalSettings": {
@@ -18562,7 +18615,7 @@
                         "description": "Products enabled for the customer. \"CDN\" representing CDN360 and \"ECP\" representing Edge Computing Platform are supported. ",
                         "enum": [
                           "CDN",
-                          "ECP'"
+                          "ECP"
                         ],
                         "items": {
                           "type": "string"
@@ -18600,6 +18653,21 @@
                     },
                     "required": [
                       "regionalOffice"
+                    ],
+                    "examples": [
+                      {
+                        "apiRate": 64,
+                        "apiAccountLimit": 3,
+                        "type": "regular",
+                        "products": [
+                          "CDN"
+                        ],
+                        "status": "suspended",
+                        "description": "string",
+                        "regionalOffice": "string",
+                        "parentId": "string",
+                        "contactLimit": 20
+                      }
                     ]
                   },
                   "phone": {
@@ -20006,7 +20074,7 @@
                   },
                   "trialDeadline": {
                     "type": "string",
-                    "description": "A date in RFC 3339 format indicating when the trial expires. This field is required if the <i>status</i> field's value  is <i>trial</i>. "
+                    "description": "A date in RFC 3339 format indicating when the trial expires. This field is required if the <i>status</i> field's value is <i>trial</i>. "
                   },
                   "usageLimitDays": {
                     "type": "integer",
@@ -20153,6 +20221,12 @@
                   "billUsingStripe": {
                     "type": "boolean",
                     "description": "Whether the customer will be invoiced using Stripe payment processing. If you are a reseller who plans to use Stripe to bill your child customers, then you can specify <i>true</i>. Otherwise, <i>false</i> is more appropriate. CDNetworks will not bill your customers for you."
+                  },
+                  "secretLimit": {
+                    "type": "integer",
+                    "description": "Total number of secrets that can be created.",
+                    "default": 100,
+                    "minimum": 0
                   }
                 },
                 "required": [
@@ -20236,7 +20310,7 @@
                           },
                           "trialDeadline": {
                             "type": "string",
-                            "description": "A date in RFC 3339 format indicating when the trial expires. This field is required if the <i>status</i> field's value  is <i>trial</i>."
+                            "description": "A date in RFC 3339 format indicating when the trial expires. This field is required if the <i>status</i> field's value is <i>trial</i>."
                           },
                           "usageLimitDays": {
                             "type": "integer",
@@ -20646,6 +20720,12 @@
                       "minimum": 0,
                       "description": "Total number of webhooks that can be created.",
                       "default": 100
+                    },
+                    "secretLimit": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "default": 100,
+                      "description": "Total number of secrets that can be created."
                     }
                   },
                   "required": [
@@ -20678,7 +20758,10 @@
                       "usageLimitDays": 0,
                       "usageLimitDollar": 0,
                       "allowDeploymentInChina": false,
-                      "billUsingStripe": false
+                      "advancedFeatures": [],
+                      "billUsingStripe": false,
+                      "secretLimit": 100,
+                      "webhookLimit": 100
                     }
                   }
                 }
@@ -20904,7 +20987,7 @@
                   },
                   "status": {
                     "type": "string",
-                    "description": "Indicates the status of a customer's access to the CDN360 product. An <i>active</i> customer has full access. A <i>suspended</i> customer no longer has access. A <i>trial</i> customer  is one with trial settings which may be more limited than those of a customer with the <i>active</i> status.",
+                    "description": "Indicates the status of a customer's access to the CDN360 product. An <i>active</i> customer has full access. A <i>suspended</i> customer no longer has access. A <i>trial</i> customer is one with trial settings which may be more limited than those of a customer with the <i>active</i> status.",
                     "enum": [
                       "active",
                       "suspended",
@@ -20934,7 +21017,7 @@
                   },
                   "trialDeadline": {
                     "type": "string",
-                    "description": "A date in RFC 3339 format indicating when the trial expires. This field is required if the <i>status</i> field's value  is <i>trial</i>."
+                    "description": "A date in RFC 3339 format indicating when the trial expires. This field is required if the <i>status</i> field's value is <i>trial</i>."
                   },
                   "advancedFeatures": {
                     "type": "array",
@@ -21001,6 +21084,12 @@
                     "description": "Total number of webhooks that can be created.",
                     "minimum": 0,
                     "default": 100
+                  },
+                  "secretLimit": {
+                    "type": "integer",
+                    "default": 100,
+                    "minimum": 0,
+                    "description": "Total number of secrets that can be created."
                   }
                 }
               },
@@ -21868,6 +21957,12 @@
                       "minimum": 0,
                       "description": "Total number of webhooks that can be created.",
                       "default": 100
+                    },
+                    "secretLimit": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "default": 100,
+                      "description": "Total number of secrets that can be created."
                     }
                   },
                   "required": [
@@ -21900,7 +21995,10 @@
                       "usageLimitDays": 0,
                       "usageLimitDollar": 0,
                       "allowDeploymentInChina": false,
-                      "billUsingStripe": false
+                      "billUsingStripe": false,
+                      "advancedFeatures": [],
+                      "secretLimit": 100,
+                      "webhookLimit": 100
                     }
                   }
                 }
@@ -22147,6 +22245,12 @@
                       "minimum": 0,
                       "description": "Total number of webhooks that can be created.",
                       "default": 100
+                    },
+                    "secretLimit": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "default": 100,
+                      "description": "Total number of secrets that can be created."
                     }
                   },
                   "required": [
@@ -22322,7 +22426,7 @@
                   },
                   "status": {
                     "type": "string",
-                    "description": "Indicates the status of a customer's access to the CDN360 product. An <i>active</i> customer has full access. A <i>suspended</i> customer no longer has access. A <i>trial</i> customer  is one with trial settings which may be more limited than those of a customer with the <i>active</i> status.",
+                    "description": "Indicates the status of a customer's access to the CDN360 product. An <i>active</i> customer has full access. A <i>suspended</i> customer no longer has access. A <i>trial</i> customer is one with trial settings which may be more limited than those of a customer with the <i>active</i> status.",
                     "enum": [
                       "active",
                       "suspended",
@@ -22352,7 +22456,7 @@
                   },
                   "trialDeadline": {
                     "type": "string",
-                    "description": "A date in RFC 3339 format indicating when the trial expires. This field is required if the <i>status</i> field's value  is <i>trial</i>."
+                    "description": "A date in RFC 3339 format indicating when the trial expires. This field is required if the <i>status</i> field's value is <i>trial</i>."
                   },
                   "advancedFeatures": {
                     "type": "array",
@@ -22419,6 +22523,12 @@
                     "description": "Total number of webhooks that can be created.",
                     "minimum": 0,
                     "default": 100
+                  },
+                  "secretLimit": {
+                    "type": "integer",
+                    "default": 100,
+                    "minimum": 0,
+                    "description": "Total number of secrets that can be created."
                   }
                 }
               },
@@ -25250,6 +25360,839 @@
           }
         ]
       }
+    },
+    "/cdn/secrets": {
+      "post": {
+        "summary": "Create a secret",
+        "tags": [
+          "Secret Management"
+        ],
+        "responses": {
+          "201": {
+            "description": "The location header in the response will contain a reference to the new secret's ID, for example, <code>Location: https://ngapi-cdnetworks.com/cdn/secrets/60d6707cca3e387d2a28fc9e</code>. You can refer to the ID when calling APIs to delete, get, or update the secret.\n",
+            "headers": {
+              "Location": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "The location header contains a reference to the new secret's ID."
+              }
+            }
+          },
+          "400": {
+            "description": "The request is invalid. Refer to the response body for details.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "string"
+                    },
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "examples": {
+                  "Invalid secret value": {
+                    "value": {
+                      "code": "InvalidSecretValue",
+                      "message": "The secret is too long, too short, or contains invalid characters."
+                    }
+                  },
+                  "Invalid name": {
+                    "value": {
+                      "code": "InvalidName",
+                      "message": "The name is missing or contains invalid characters or longer than 30 characters."
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Access denied. Check the credentials you used.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "string"
+                    },
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "examples": {
+                  "Access denied": {
+                    "value": {
+                      "code": "AccessDenied",
+                      "message": "Please enter valid credentials."
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "A secret with this name already exists.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "string"
+                    },
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "examples": {
+                  "Duplicate name": {
+                    "value": {
+                      "code": "DuplicateName",
+                      "message": "The name already exists."
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "post-cdn-secrets",
+        "description": "Create a secret to protect sensitive text from being exposed in a property's edge logic. Refer to the secret in your property's edge logic using the <code>$SECRET(secretName)</code> syntax. When you deploy the property, references to <code>$SECRET(secretName)</code> will be replaced by the text.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "description": "The name of the secret. It can consist of letters, numbers, hyphens, underscores, and periods. Refer to this in your edge logic using the <code>$SECRET(secretName)</code> syntax.",
+                    "maxLength": 30,
+                    "minLength": 1,
+                    "pattern": "^[A-Za-z0-9_.-]+"
+                  },
+                  "description": {
+                    "type": "string",
+                    "description": "A description of the secret. This may be useful for recording the purpose of the secret."
+                  },
+                  "secret": {
+                    "type": "string",
+                    "description": "The sensitive text you want to protect. When you deploy your property, references to <code>$SECRET(secretName)</code> in your edge logic will be replaced by this text. The secret can consist of printable ASCII characters along with the tab, newline, and return characters.",
+                    "minLength": 8,
+                    "maxLength": 3599
+                  }
+                },
+                "required": [
+                  "name",
+                  "secret"
+                ]
+              },
+              "examples": {
+                "example-1": {
+                  "value": {
+                    "name": "string",
+                    "description": "string",
+                    "secret": "string"
+                  }
+                }
+              }
+            }
+          },
+          "description": "The request body contains the name of the secret along with the sensitive text to protect."
+        },
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "header",
+            "name": "On-Behalf-Of",
+            "description": "If you are a reseller, you can use this header to specify the ID of a child customer."
+          }
+        ]
+      },
+      "get": {
+        "summary": "Get a list of secrets",
+        "tags": [
+          "Secret Management"
+        ],
+        "responses": {
+          "200": {
+            "description": "The response body contains a list of secrets.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "count": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "description": "Total number of secrets. The actual number returned in the <i>secrets</i> field of the response will depend on the limit and offset parameters."
+                    },
+                    "secrets": {
+                      "type": "array",
+                      "description": "A list of secrets.",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "description": "ID of a secret."
+                          },
+                          "name": {
+                            "type": "string",
+                            "description": "Name of the secret. It can consist of letters, numbers, hyphens, underscores, and periods. Refer to this in your edge logic as <code>$SECRET(secretName)</code>.",
+                            "minLength": 1,
+                            "pattern": "^[A-Za-z0-9_.-]+",
+                            "maxLength": 30
+                          },
+                          "description": {
+                            "type": "string",
+                            "description": "A description of the secret."
+                          },
+                          "creationTime": {
+                            "type": "string",
+                            "description": "An RFC 3339 date indicating when the secret was created. This will be in UTC time, for example, \"2021-07-06T00:00:00Z\".\n"
+                          },
+                          "lastUpdateTime": {
+                            "type": "string",
+                            "description": "An RFC 3339 date indicating when the secret was last updated, for example, \"2021-07-06T00:00:00Z\".\n"
+                          },
+                          "ownerCustomerId": {
+                            "type": "integer",
+                            "description": "ID of the customer that owns the secret."
+                          }
+                        },
+                        "required": [
+                          "id",
+                          "name",
+                          "creationTime",
+                          "lastUpdateTime",
+                          "ownerCustomerId"
+                        ]
+                      }
+                    }
+                  },
+                  "required": [
+                    "count"
+                  ]
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "count": 1,
+                      "secrets": [
+                        {
+                          "id": "60c11c9838a6c82e2e8ff7ce",
+                          "name": "mysecret",
+                          "description": "This is a secret password",
+                          "ownerCustomerId": 123466,
+                          "lastUpdateTime": "2021-06-24T16:04:22Z",
+                          "creationTime": "2021-06-09T19:55:04Z"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "The request was invalid. Refer to the response body for details.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "string"
+                    },
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "examples": {
+                  "Invalid list limit": {
+                    "value": {
+                      "code": "InvalidListLimit",
+                      "message": "The value of limit should be between 1 and 200, inclusive."
+                    }
+                  },
+                  "Invalid list offset": {
+                    "value": {
+                      "code": "InvalidListOffset",
+                      "message": "The offset must be a valid non-negative integer."
+                    }
+                  },
+                  "Invalid report range": {
+                    "value": {
+                      "code": "InvalidReportRange",
+                      "message": "The value '1' is invalid for Report-Range header. Only 'self-only', 'children-only' and 'self+children' are supported."
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Access denied. Check the credentials you used.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "string"
+                    },
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "examples": {
+                  "Access denied": {
+                    "value": {
+                      "code": "AccessDenied",
+                      "message": "Please enter valid credentials."
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-cdn-secrets",
+        "description": "Get a list of secrets that have been defined. Filter the results using the query parameters.",
+        "parameters": [
+          {
+            "schema": {
+              "type": "integer",
+              "minimum": 0,
+              "default": 0
+            },
+            "in": "query",
+            "name": "offset",
+            "description": "Index of the first secret to return."
+          },
+          {
+            "schema": {
+              "type": "integer",
+              "default": 100,
+              "minimum": 1,
+              "maximum": 200
+            },
+            "in": "query",
+            "name": "limit",
+            "description": "Maximum number of secrets to return."
+          },
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "header",
+            "name": "On-Behalf-Of",
+            "description": "If you are a reseller, you can use this header to specify the ID of a child customer."
+          },
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "header",
+            "name": "Report-Range",
+            "description": "An optional header that resellers can use to specify whether to include data from children customers. <table><tr><th>Value</th><th>Behavior</th></tr><tr><td>self-only</td><td>Include secrets from the caller.</td></tr><tr><td>children-only</td><td>Only secrets owned by children customers will be included.</td></tr><tr><td>self+children</td><td>Include secrets of both the caller and children customers.</td></tr></table>"
+          },
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "search",
+            "description": "The value of the search parameter is matched on the id, name, and description fields of the secrets. Partial matches are supported."
+          }
+        ]
+      }
+    },
+    "/cdn/secrets/{secretID}": {
+      "parameters": [
+        {
+          "schema": {
+            "type": "string"
+          },
+          "name": "secretID",
+          "in": "path",
+          "required": true,
+          "description": "ID of a secret."
+        }
+      ],
+      "get": {
+        "summary": "Get a secret",
+        "tags": [
+          "Secret Management"
+        ],
+        "responses": {
+          "200": {
+            "description": "The response body contains details about the secret.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "description": "ID of the secret."
+                    },
+                    "name": {
+                      "type": "string",
+                      "description": "Name of the secret. It can consist of letters, numbers, hyphens, underscores, and periods. Refer to this in your edge logic using the <code>$SECRET(secretName)</code> syntax.",
+                      "minLength": 1,
+                      "maxLength": 30,
+                      "pattern": "^[A-Za-z0-9_.-]+"
+                    },
+                    "description": {
+                      "type": "string",
+                      "description": "Description of the secret."
+                    },
+                    "secret": {
+                      "type": "string",
+                      "description": "The value of the secret. The secret can consist of printable ASCII characters along with the tab, newline, and return characters. For security, we will not show all the characters. The middle of it will be masked out by asterisk characters. References to <code>$SECRET(secretName)</code> in your edge logic will be replaced by the value.",
+                      "minLength": 8,
+                      "maxLength": 3599
+                    },
+                    "ownerCustomerId": {
+                      "type": "integer",
+                      "description": "ID of the customer that owns the secret."
+                    },
+                    "lastUpdateTime": {
+                      "type": "string",
+                      "description": "An RFC 3339 date indicating when the secret was last updated, for example, \"2021-07-06T00:00:00Z\"."
+                    },
+                    "creationTime": {
+                      "type": "string",
+                      "description": "An RFC 3339 date indicating when the secret was created. This will be in UTC time, for example, \"2021-07-06T00:00:00Z\"."
+                    },
+                    "usageInProduction": {
+                      "type": "array",
+                      "description": "Properties deployed to production that refer to the secret.",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "propertyId": {
+                            "type": "string",
+                            "description": "ID of a property using the secret."
+                          }
+                        }
+                      }
+                    },
+                    "usageInStaging": {
+                      "type": "array",
+                      "description": "Properties deployed to staging that refer to the secret.",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "propertyId": {
+                            "type": "string",
+                            "description": "ID of a property using the secret."
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "name",
+                    "secret",
+                    "ownerCustomerId",
+                    "lastUpdateTime",
+                    "creationTime"
+                  ]
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "id": "60d6707cca3e387d2a28fc9e",
+                      "name": "OriginPassword",
+                      "description": "Password used to authenticate to our origin server",
+                      "secret": "ab****xz",
+                      "ownerCustomerId": 12345678,
+                      "lastUpdateTime": "2021-06-26T00:10:36Z",
+                      "creationTime": "2021-06-06T00:10:36Z",
+                      "usageInProduction": [],
+                      "usageInStaging": []
+                    }
+                  },
+                  "example-2": {
+                    "value": {
+                      "id": "60d6707cca3e387d2a28fc9e",
+                      "name": "OriginPassword",
+                      "description": "Password used to authenticate to our origin server",
+                      "secret": "ab****xz",
+                      "ownerCustomerId": 12345678,
+                      "lastUpdateTime": "2021-06-26T00:10:36Z",
+                      "creationTime": "2021-06-06T00:10:36Z",
+                      "usageInProduction": [
+                        {
+                          "propertyId": "abcdef12346"
+                        }
+                      ],
+                      "usageInStaging": [
+                        {
+                          "propertyId": "986abcdef12346"
+                        },
+                        {
+                          "propertyId": "abcdef12346"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Access denied. Check the credentials you used.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "string"
+                    },
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "examples": {
+                  "Access denied": {
+                    "value": {
+                      "code": "AccessDenied",
+                      "message": "Please enter valid credentials."
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The secret could not be found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "string"
+                    },
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "examples": {
+                  "Invalid secret ID": {
+                    "value": {
+                      "code": "InvalidSecretId",
+                      "message": "The specified secret ID does not exist."
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-cdn-secrets-secretID",
+        "description": "Get details about a secret including its usage in properties deployed to staging and production.",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "header",
+            "name": "On-Behalf-Of",
+            "description": "If you are a reseller, you can use this header to specify the ID of a child customer."
+          }
+        ]
+      },
+      "patch": {
+        "summary": "Update a secret",
+        "tags": [
+          "Secret Management"
+        ],
+        "responses": {
+          "204": {
+            "description": "The secret was successfully updated."
+          },
+          "400": {
+            "description": "The request was invalid. Refer to the response body for details.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "string"
+                    },
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "examples": {
+                  "Invalid name": {
+                    "value": {
+                      "code": "InvalidName",
+                      "message": "The name is missing or contains invalid characters or longer than 30 characters."
+                    }
+                  },
+                  "Invalid secret value": {
+                    "value": {
+                      "code": "InvalidSecretValue",
+                      "message": "The secret is too long, too short, or contains invalid characters."
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Access denied. Check the credentials you used.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "string"
+                    },
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "examples": {
+                  "Access denied": {
+                    "value": {
+                      "code": "AccessDenied",
+                      "message": "Please enter valid credentials."
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The secret was not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "string"
+                    },
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "examples": {
+                  "Invalid secret ID": {
+                    "value": {
+                      "code": "InvalidSecretId",
+                      "message": "The specified secret ID does not exist."
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "The secret could not be updated because the name is already used by another secret.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "string"
+                    },
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "examples": {
+                  "Duplicate name": {
+                    "value": {
+                      "code": "DuplicateName",
+                      "message": "The name already exists."
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "patch-cdn-secrets-secretID",
+        "description": "Update a secret using this API. Deployed properties using the secret will continue to use its original value at the time of deployment. If you change the secret's name, property versions referring to the old name will not pass future validations until you edit the properties to remove the references or update them to use a valid secret's name. If you change the secret's value, properties using the secret must be revalidated before they can be redeployed. ",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "description": "Name of the secret. It can consist of letters, numbers, hyphens, underscores, and periods. Refer to this in your edge logic using the <code>$SECRET(secretName)</code> syntax. If you change the name, property versions referring to the old name will not pass future validation.",
+                    "minLength": 1,
+                    "maxLength": 30,
+                    "pattern": "^[A-Za-z0-9_.-]+"
+                  },
+                  "description": {
+                    "type": "string",
+                    "description": "A description of the secret. This may be useful for recording the purpose of the secret."
+                  },
+                  "secret": {
+                    "type": "string",
+                    "description": "The sensitive text you want to protect. The secret can consist of printable ASCII characters along with the tab, newline, and return characters. When you deploy your property, references to <code>$SECRET(secretName)</code> in your edge logic will be replaced by this text. Once the property is deployed, it will use the value of the secret at that time. If you change the secret's value and want your property to use the new value, you must revalidate and redeploy the property.",
+                    "minLength": 8,
+                    "maxLength": 3599
+                  }
+                }
+              },
+              "examples": {
+                "example-1": {
+                  "value": {
+                    "name": "newName"
+                  }
+                }
+              }
+            }
+          },
+          "description": "Specify the fields you want to update."
+        },
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "header",
+            "name": "On-Behalf-Of",
+            "description": "If you are a reseller, you can use this header to specify the ID of a child customer."
+          }
+        ]
+      },
+      "delete": {
+        "summary": "Delete a secret",
+        "tags": [
+          "Secret Management"
+        ],
+        "responses": {
+          "204": {
+            "description": "The secret has been deleted."
+          },
+          "403": {
+            "description": "Access denied",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "string"
+                    },
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "examples": {
+                  "Access denied": {
+                    "value": {
+                      "code": "AccessDenied",
+                      "message": "Please enter valid credentials."
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The secret could not be found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "string"
+                    },
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "examples": {
+                  "Invalid secret ID": {
+                    "value": {
+                      "code": "InvalidSecretId",
+                      "message": "The specified secret ID does not exist."
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "The secret is in use in production or staging and cannot be deleted. You can call the <a href=\"#operation/get-cdn-secrets-secretID\">Get a secret API</a> to identify the deployed properties using the secret.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "string"
+                    },
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "examples": {
+                  "Secret in use": {
+                    "value": {
+                      "code": "SecretInUse",
+                      "message": "The secret cannot be deleted because it is in use on production or staging."
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "delete-cdn-secrets-secretID",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "header",
+            "name": "On-Behalf-Of",
+            "description": "If you are a reseller, you can use this header to specify the ID of a child customer."
+          }
+        ],
+        "description": "Delete a secret by its ID. A secret used in a deployed property cannot be deleted. If a secret is obsolete, you must remove its references in properties, revalidate, and redeploy before you can delete the secret."
+      }
     }
   },
   "components": {
@@ -25274,6 +26217,10 @@
     {
       "name": "Property Validation",
       "description": "After you <a href=\"#operation/createProperty\">create a property</a>, you must validate it to ensure that the settings are syntactically correct before you can <a href=\"#tag/Deployment-Management\">deploy</a> it to staging or production. The validation process is an asynchronous action. APIs are available to check the status of your validation tasks."
+    },
+    {
+      "name": "Secret Management",
+      "description": "These APIs allow you to define secrets that are used to hide sensitive information, such as preventing a password from being visible in an API call or within the CDN360 portal. For example, a secret could be a key used to authenticate client requests to your origin server. By creating a secret and referring to it in your <a href=\"/cdn/docs/edge-logic/intro\">Edge Logic</a> using the secret's name via the syntax `$SECRET(secretName)` the key itself would not be exposed when viewing a property through the CDN360 portal or fetching it using the CDN360 API."
     },
     {
       "name": "Deployment Management",
