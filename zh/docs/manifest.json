@@ -1,0 +1,272 @@
+{
+    "metadata": {
+      "id": "cdn",
+      "title": "CDN360",
+      "description": "CDN360是一个引领内容分发网络(CDN)演进的下一代产品。她使内容拥有者可以随心所欲地配置分发的方式，也给遍布世界各地的终端用户带来安全，快速，稳定的服务和流畅的体验。",
+      "showOnMainPage": true,
+      "links": [
+        {
+          "title": "快速开始",
+          "caption": "开始使用CDN360",
+          "icon": "bolt",
+          "path": "docs/intro"
+        },
+        {
+          "title": "Portal参考文档",
+          "caption": "CDN360 Portal参考文档",
+          "icon": "book",
+          "path": "docs/portal/accessing-portal/logging-in"
+        },
+        {
+          "title": "API参考文档",
+          "caption": "CDN360 API参考文档",
+          "icon": "gear",
+          "path": "apidocs"
+        },
+        {
+          "title": "边缘逻辑参考文档",
+          "caption": "学习CDN360的边缘逻辑",
+          "icon": "cli",
+          "path": "docs/edge-logic/intro"
+        },
+        {
+          "title": "Release Notes",
+          "caption": "Learn About Our Releases",
+          "icon": "notes",
+          "path": "docs/release-notes"
+        }
+      ]
+    },
+    "routes": [
+      { "title": "概览", "path": "/docs/intro.md" },
+      { "title": "如何开始", "path": "/docs/getting-started.md" },
+      {
+        "title": "Portal",
+        "heading": true,
+        "routes": [
+          {
+            "title": "开始使用Portal",
+            "routes": [
+              {
+                "title": "如何登录",
+                "path": "/docs/portal/accessing-portal/logging-in.md"
+              },
+              {
+                "title": "忘记密码",
+                "path": "/docs/portal/accessing-portal/forgot-password.md"
+              },
+              {
+                "title": "页面切换",
+                "path": "/docs/portal/accessing-portal/navigating-ui.md"
+              }
+            ]
+          },
+          {
+            "title": "边缘配置",
+            "routes": [
+              {
+                "title": "概览",
+                "path": "/docs/portal/edge-configurations/managing-properties.md"
+              },
+              {
+                "title": "创建加速项",
+                "path": "/docs/portal/edge-configurations/creating-property.md"
+              },
+              {
+                "title": "编辑加速项",
+                "path": "/docs/portal/edge-configurations/editing-properties.md"
+              },
+              {
+                "title": "部署或卸载加速项",
+                "path": "/docs/portal/edge-configurations/deploying-property.md"
+              },
+              {
+                "title": "测试加速项",
+                "path": "/docs/portal/edge-configurations/testing-property.md"
+              },
+              {
+                "title": "删除加速项",
+                "path": "/docs/portal/edge-configurations/deleting-property.md"
+              },
+              {
+                "title": "比较加速项版本",
+                "path": "/docs/portal/edge-configurations/comparing-properties.md"
+              },
+              {
+                "title": "管理源站配置",
+                "path": "/docs/portal/edge-configurations/managing-origins.md"
+              }
+            ]
+          },
+          {
+            "title": "保密信息",
+            "routes": [
+              {
+                "title": "概览",
+                "path": "/docs/portal/secrets/overview.md"
+              },
+              {
+                "title": "创建保密信息",
+                "path": "/docs/portal/secrets/creating-secrets.md"
+              },
+              {
+                "title": "修改保密信息",
+                "path": "/docs/portal/secrets/editing-secrets.md"
+              },
+              {
+                "title": "删除保密信息",
+                "path": "/docs/portal/secrets/deleting-secrets.md"
+              }
+            ]
+          },
+          {
+            "title": "流量管理",
+            "routes": [
+              {
+                "title": "概览",
+                "path": "/docs/portal/traffic-management/overview.md"
+              },
+              {
+                "title": "创建边缘域名",
+                "path": "/docs/portal/traffic-management/creating-edge-hostname.md"
+              },
+              {
+                "title": "修改边缘域名",
+                "path": "/docs/portal/traffic-management/editing-edge-hostname.md"
+              },
+              {
+                "title": "删除边缘域名",
+                "path": "/docs/portal/traffic-management/deleting-edge-hostname.md"
+              }
+            ]
+          },
+          {
+            "title": "证书管理",
+            "routes": [
+              {
+                "title": "概览",
+                "path": "/docs/portal/certificates/overview.md"
+              },
+              {
+                "title": "创建证书",
+                "path": "/docs/portal/certificates/creating-certificates.md"
+              },
+              {
+                "title": "修改证书",
+                "path": "/docs/portal/certificates/updating-certificates.md"
+              },
+              {
+                "title": "部署证书",
+                "path": "/docs/portal/certificates/deploying-certificates.md"
+              },
+              {
+                "title": "自动更新证书",
+                "path": "/docs/portal/certificates/auto-renewal.md"
+              },
+              {
+                  "title": "删除证书",
+                "path": "/docs/portal/certificates/deleting-certificate.md"
+              }
+            ]
+          },
+          { "title": "报表查看", "path": "/docs/portal/reports.md" },
+          { "title": "内容管理", "path": "/docs/portal/content-management.md" },
+          { "title": "异步任务",
+            "routes": [
+              {
+                "title": "配置验证",
+                "path": "/docs/portal/tasks/validations.md"
+              },
+              {
+                "title": "配置部署",
+                "path": "/docs/portal/tasks/deployments.md"
+              }
+            ]
+          },
+          {
+            "title": "身份和权限",
+            "routes": [
+              {
+                "title": "概览",
+                "path": "/docs/portal/identities-and-access/overview.md"
+              },
+              {
+                "title": "管理角色",
+                "path": "/docs/portal/identities-and-access/managing-roles.md"
+              },
+              {
+                "title": "管理用户",
+                "path": "/docs/portal/identities-and-access/managing-users.md"
+              }
+            ]
+          }
+        ]
+      },
+      { 
+        "title": "边缘逻辑",
+        "heading": true,
+        "routes": [
+          {
+            "title": "简介",
+            "path": "/docs/edge-logic/intro.md"
+          },
+          {
+            "title": "Hello World",
+            "path": "/docs/edge-logic/hello-world.md"
+          },
+          {
+            "title": "简单缓存",
+            "path": "/docs/edge-logic/simple-caching.md"
+          },
+          {
+            "title": "用'if'来选择多个源站",
+            "path": "/docs/edge-logic/multiple-origins.md"
+          },
+          {
+            "title": "演练环境",
+            "path": "/docs/edge-logic/staging-environment.md"
+          },
+          {
+            "title": "支持的指令",
+            "path": "/docs/edge-logic/supported-directives.md"
+          },
+          {
+            "title": "内置变量",
+            "path": "/docs/edge-logic/built-in-variables.md"
+          },
+          {
+            "title": "常见问题",
+            "path": "/docs/edge-logic/faq.md"
+          }
+        ]
+      },
+      { 
+        "title": "实现案例",
+        "heading": true,
+        "routes": [
+          {
+            "title": "加速一个AWS Bucket",
+            "path": "/docs/recipes/aws-bucket.md"
+          },
+          {
+            "title": "加速REST API",
+            "path": "/docs/recipes/api-acceleration.md"
+          },
+          {
+            "title": "安全相关的配置",
+            "path": "/docs/recipes/secure-delivery.md"
+          }
+        ]
+      },
+      { 
+        "title": "Release Notes",
+        "heading": true,
+        "routes": [
+          {
+            "title": "Release Notes",
+            "path": "/docs/release-notes.md"
+          }
+        ]
+      }
+    ]
+  }
